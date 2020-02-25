@@ -7,6 +7,10 @@ public class PrimeNumber {
             if (CheckPrimeNumber.check(i)) {
                 count++;
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa378ef6ad68e7d6d771d73ddd98351aff658e25
         }
         return count;
     }
