@@ -19,4 +19,11 @@ public class SqMaxTest {
         assertThat(result, is(10));
     }
 
+    @Test
+    public void errorFindThird() {
+        SqMax check = new SqMax();
+        int result = check.max(4, 3, 2,1);
+        assertThat(result, is(4));
+    }
+
 }
