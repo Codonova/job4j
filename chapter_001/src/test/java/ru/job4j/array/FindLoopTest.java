@@ -52,7 +52,7 @@ public class FindLoopTest {
         int[] input = new int[]{2, 5, 8, 7, 6, 0};
         int value = 7;
         int start = 1;
-        int finish = 3;
+        int finish = 4;
         int result = FindLoop.indexOf(input, value, start, finish);
         int expect = 3;
         assertThat(result, is(expect));
