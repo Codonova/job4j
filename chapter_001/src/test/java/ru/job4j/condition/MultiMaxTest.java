@@ -15,14 +15,14 @@ public class MultiMaxTest {
     @Test
     public void whenFirstMax() {
         MultiMax check = new MultiMax();
-        int result = check.max(8,3,6);
-        assertThat(result,is(8));
+        int result = check.max(8, 3, 6);
+        assertThat(result, is(8));
     }
 
     @Test
     public void whenWithoutMax() {
         MultiMax check = new MultiMax();
-        int result = check.max(8,8,8);
-        assertThat(result,is(8));
+        int result = check.max(8, 8, 8);
+        assertThat(result, is(8));
     }
 }
