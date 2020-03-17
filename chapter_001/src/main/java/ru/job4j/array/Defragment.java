@@ -1,6 +1,16 @@
 package ru.job4j.array;
 
+/**
+ * Defragment
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class Defragment {
+    /**
+     * Дефрагментация массива, перемещает значения null в конец массива.
+     * @param array входяий массив
+     * @return
+     */
     public static String[] compress(String[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == null) {
@@ -15,12 +25,9 @@ public class Defragment {
                     count++;
                 }
             }
-
             System.out.print(array[i] + " ");
         }
-
         return array;
-
     }
 
     public static void main(String[] args) {

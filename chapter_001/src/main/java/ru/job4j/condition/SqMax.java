@@ -1,6 +1,22 @@
 package ru.job4j.condition;
 
+/**
+ * SqMax
+ *
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class SqMax {
+
+    /**
+     * Поиск максимального значения из четырех чисел
+     *
+     * @param first
+     * @param second
+     * @param third
+     * @param forth
+     * @return result
+     */
     public static int max(int first, int second, int third, int forth) {
         int result = forth;
 

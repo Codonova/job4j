@@ -1,28 +1,57 @@
 package ru.job4j.converter;
 
+/**
+ * Converter
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class Converter {
 
+    /**
+     * Конвертирует из рубля в евро
+     * @param value Рубли
+     * @return rsl
+     */
     public static int rubleToEuro(int value) {
         int rsl = value / 70;
         return rsl;
     }
+
+    /**
+     * Коневртирует из рубля в доллар
+     * @param value Рубли
+     * @return rsl
+     */
 
     public static int rubleToDollar(int value) {
         int rsl = value / 60;
         return rsl;
     }
 
+    /**
+     * Конвертирует из доллара в рубль
+     * @param value доллар
+     * @return rsl
+     */
     public static int dollarToRuble(int value) {
         int rsl = value * 60;
         return rsl;
     }
 
+    /**
+     * Конвертирует из евро в рубль
+     * @param value Евро
+     * @return rsl
+     */
     public static int euroToRuble(int value) {
         int rsl = value * 70;
         return rsl;
     }
 
-
+    /**
+     * main
+     * @param args args
+     */
     public static void main(String[] args) {
         int euro = Converter.rubleToEuro(140);
         System.out.println("140 rubles are " + euro + " euro.");

@@ -1,6 +1,17 @@
 package ru.job4j.calculator;
 
+/**
+ * Calculator
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class Calculator {
+
+    /**
+     * main
+     * @param args args
+     */
+
     public static void main(String[] args) {
         int one = 1;
         int two = 2;

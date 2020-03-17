@@ -1,6 +1,15 @@
 package ru.job4j.array;
 
+/**
+ * AlgoArray
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class AlgoArray {
+    /**
+     * main
+     * @param args args
+     */
     public static void main(String[] args) {
         int[] array = new int[]{5, 3, 2, 1, 4};
         int temp = array[0];

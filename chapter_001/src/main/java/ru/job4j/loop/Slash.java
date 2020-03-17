@@ -1,6 +1,19 @@
 package ru.job4j.loop;
 
+/**
+ * Slash
+ *
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class Slash {
+
+    /**
+     * Печатает крест из нулей
+     *
+     * @param size размер креста
+     */
+
     public static void draw(int size) {
         for (int row = 0; row < size; row++) {
             for (int cell = 0; cell < size; cell++) {
@@ -18,6 +31,11 @@ public class Slash {
         }
         System.out.println();
     }
+
+    /**
+     * main
+     * @param args args
+     */
 
     public static void main(String[] args) {
         System.out.println("Draw by 3");

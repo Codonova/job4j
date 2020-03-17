@@ -1,6 +1,17 @@
 package ru.job4j.array;
 
+/**
+ * EndsWith
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class EndsWith {
+    /**
+     * Проверяет заканчивается ли массив на символы
+     * @param word массив символов (слово)
+     * @param post массив символов (последние символы)
+     * @return result false or true
+     */
     public static boolean endsWith(char[] word, char[] post) {
         boolean result = true;
         for (int i = 0; i < post.length; i++) {
@@ -8,9 +19,7 @@ public class EndsWith {
                 result = false;
                 break;
             }
-
         }
-        // проверить. что массив word имеет последние элементы одинаковые с post
         return result;
     }
 }

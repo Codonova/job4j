@@ -1,6 +1,16 @@
 package ru.job4j.array;
 
+/**
+ * Check
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class Check {
+    /**
+     * Проверяет массив на одинаковые значение, если одно отличается то возваращет false
+     * @param data массив boolean
+     * @return result массив
+     */
     public static boolean mono(boolean[] data) {
         boolean result = true;
         for (int i = 0; i < data.length; i++) {
@@ -9,8 +19,6 @@ public class Check {
                 break;
             }
         }
-
-
         return result;
     }
 }

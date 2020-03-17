@@ -2,7 +2,18 @@ package ru.job4j.array;
 
 import java.util.Arrays;
 
+/**
+ * Merge
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class Merge {
+    /**
+     * Соединяет два отсортированных массива в один отсортированный
+     * @param left превый массив
+     * @param right второй массив
+     * @return rsl итоговый массив
+     */
     public int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
         int i = 0, j = 0, k = 0;
@@ -24,9 +35,13 @@ public class Merge {
             }
             k++;
         }
-
         return rsl;
     }
+
+    /**
+     * main
+     * @param args args
+     */
 
     public static void main(String[] args) {
         Merge process = new Merge();

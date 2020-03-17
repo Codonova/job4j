@@ -1,6 +1,20 @@
 package ru.job4j.loop;
 
+/**
+ * Counter
+ *
+ * @author Ruslan Kooslapchenkov
+ */
+
 public class Counter {
+
+    /**
+     * Суммирует числа в заданном диапазоне
+     *
+     * @param start  начало
+     * @param finish конец
+     * @return sum
+     */
     public static int sum(int start, int finish) {
         int sum = 0;
         for (int i = start; i <= finish; i++) {
@@ -8,6 +22,14 @@ public class Counter {
         }
         return sum;
     }
+
+    /**
+     * Суммирует четный числа в заданном диапазоне
+     *
+     * @param start  начало
+     * @param finish конец
+     * @return sum
+     */
 
     public static int sumByEven(int start, int finish) {
         int sum = 0;
@@ -19,6 +41,11 @@ public class Counter {
         return sum;
     }
 
+    /**
+     * main
+     *
+     * @param args args
+     */
     public static void main(String[] args) {
         System.out.println(sum(0, 10));
         System.out.println(sum(3, 8));
