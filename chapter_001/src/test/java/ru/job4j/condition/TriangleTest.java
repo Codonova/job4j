@@ -3,6 +3,7 @@ package ru.job4j.condition;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class TriangleTest {
@@ -14,7 +15,7 @@ public class TriangleTest {
         Point third = new Point(1, 6);
         Triangle triangle = new Triangle(first, second, third);
         double result = triangle.area();
-        assertThat(result, is(5.000000000000003));
+        assertEquals(result, 5.0, 0.1);
     }
 
     @Test
@@ -24,6 +25,6 @@ public class TriangleTest {
         Point third = new Point(2, 2);
         Triangle triangle = new Triangle(first, second, third);
         double result = triangle.area();
-        assertThat(result, is(-1.0));
+        assertEquals(result, -1, 0.1);
     }
 }
