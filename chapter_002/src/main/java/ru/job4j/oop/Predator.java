@@ -3,7 +3,7 @@ package ru.job4j.oop;
 public class Predator extends Animal {
 
     public Predator() {
-        super();
+        super("Vasya");
         System.out.println("Predator");
     }
 
