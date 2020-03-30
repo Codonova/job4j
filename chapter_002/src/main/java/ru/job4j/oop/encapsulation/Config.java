@@ -13,7 +13,7 @@ public class Config {
         System.out.println(position);
     }
 
-    private String getProperty(String key) {
+     String getProperty(String key) {
         return search(key);
     }
 
