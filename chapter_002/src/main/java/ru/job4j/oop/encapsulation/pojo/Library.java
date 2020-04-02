@@ -17,6 +17,21 @@ public class Library {
     }
 
     /**
+     * Меняет местами значения по индексам
+     * @param mass
+     * @param index1
+     * @param index2
+     * @return
+     */
+
+    public static Book[] replace(Book[] mass, int index1, int index2) {
+        Book tmp = mass[index1];
+        mass[index1] = mass[index2];
+        mass[index2] = tmp;
+        return mass;
+    }
+
+    /**
      * main
      *
      * @param args
@@ -35,11 +50,7 @@ public class Library {
         books[3] = manual;
 
         print(books);
-
-        Book tmp = books[3];
-        books[3] = books[0];
-        books[0] = tmp;
-
+        replace(books, 3, 0);
         print(books);
 
         for (int i = 0; i < books.length; i++) {
