@@ -26,6 +26,7 @@ public class Tracker {
 
     /**
      * Метод ищет имена в массиве
+     *
      * @param key
      * @return Массив имен
      */
@@ -43,19 +44,14 @@ public class Tracker {
     }
 
     /**
-     * ПОиск по уникальному коду заявки
+     * Поиск по уникальному коду заявки
+     *
      * @param id
      * @return возращает уникальный код заявки, если не находит возвращает null.
      */
     public Item findById(String id) {
-        Item rsl = null;
-        for (int i = 0; i < position; i++) {
-            if (items[i].getId().equals(id)) {
-                rsl = items[i];
-                break;
-            }
-        }
-        return rsl;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
     }
 
     /**
@@ -69,6 +65,24 @@ public class Tracker {
         return item;
     }
 
+    public boolean replace(String id, Item item) {
+        int index = indexOf(id);
+        item.setId(id);
+        items[index] = item;
+        return true;
+    }
+
+
+    private int indexOf(String id) {
+        int rsl = -1;
+        for (int i = 0; i < position; i++) {
+            if (items[i].getId().equals(id)) {
+                rsl = i;
+                break;
+            }
+        }
+        return rsl;
+    }
 
     /**
      * Метод генерирует уникальный ключ для заявки.
