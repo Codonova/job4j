@@ -65,6 +65,7 @@ public class Tracker {
         return item;
     }
 
+
     public boolean replace(String id, Item item) {
         int index = indexOf(id);
         if (index != -1) {
@@ -75,6 +76,22 @@ public class Tracker {
         return false;
     }
 
+    /**
+     * Метод удаляет заявку.
+     * @param id
+     * @return
+     */
+
+    public boolean delete(String id) {
+        int index = indexOf(id);
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, position - index);
+            items[position - 1] = null;
+            position--;
+            return true;
+        }
+        return false;
+    }
 
     private int indexOf(String id) {
         int rsl = -1;
