@@ -26,7 +26,7 @@ public class Matches {
         int matches = 11;
         boolean run = true;
         int count = 0;
-        while (true) {
+        while (run) {
             System.out.println("Ходит: " + players(count));
             int move = Integer.valueOf(scanner.nextLine());
             if (move > 0 && move < 4) {
