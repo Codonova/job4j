@@ -1,10 +1,7 @@
-package ru.job4j.oop;
+package ru.job4j.oop.tracker;
 
 import org.junit.Test;
-import ru.job4j.oop.tracker.Input;
-import ru.job4j.oop.tracker.Item;
-import ru.job4j.oop.tracker.StartUI;
-import ru.job4j.oop.tracker.Tracker;
+import ru.job4j.oop.StubInput;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
