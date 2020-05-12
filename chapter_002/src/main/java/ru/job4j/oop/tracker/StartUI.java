@@ -23,8 +23,8 @@ public class StartUI {
     public static void showItems(Tracker tracker) {
         System.out.println("=== All items ===");
         Item[] items = tracker.findAll();
-        for (Item names :
-                items) {
+        for (Item names
+                : items) {
             System.out.println(names);
         }
     }
