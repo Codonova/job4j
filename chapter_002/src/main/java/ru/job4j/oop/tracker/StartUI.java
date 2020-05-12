@@ -131,6 +131,7 @@ public class StartUI {
                 case 6:
                     run = false;
                     break;
+                default:
             }
         }
 
