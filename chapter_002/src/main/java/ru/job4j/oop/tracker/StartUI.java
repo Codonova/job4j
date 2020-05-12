@@ -2,71 +2,131 @@ package ru.job4j.oop.tracker;
 
 
 public class StartUI {
+    /**
+     * Создает заявку
+     *
+     * @param input
+     * @param tracker
+     */
+    public static void createItem(Input input, Tracker tracker) {
+        System.out.println("=== Create a new Item ====");
+        String name = input.askStr("Enter name: ");
+        Item item = new Item(name);
+        tracker.add(item);
+    }
 
+    /**
+     * Показывает все созданные заявки
+     *
+     * @param tracker
+     */
+    public static void showItems(Tracker tracker) {
+        System.out.println("=== All items ===");
+        Item[] items = tracker.findAll();
+        for (Item names :
+                items) {
+            System.out.println(names);
+        }
+    }
+
+    /**
+     * Редактирует заявку
+     *
+     * @param input
+     * @param tracker
+     */
+    public static void editItem(Input input, Tracker tracker) {
+        System.out.println("=== Edit ===");
+        String id = input.askStr("Enter item id: ");
+        String name = input.askStr("Enter new item name: ");
+        if (tracker.replace(id, new Item(name))) {
+            System.out.println("Edit successful!");
+        } else {
+            System.out.println("Item doesn't find.");
+        }
+    }
+
+    /**
+     * Удаляет заявку
+     *
+     * @param input
+     * @param tracker
+     */
+    public static void deleteItem(Input input, Tracker tracker) {
+        System.out.println("=== Delete ===");
+        String id = input.askStr("Enter item id: ");
+        if (tracker.delete(id)) {
+            System.out.println("Delete successful!");
+        } else {
+            System.out.println("Item doesn't find.");
+        }
+    }
+
+    /**
+     * Поиск по id заявки
+     *
+     * @param input
+     * @param tracker
+     */
+    public static void findById(Input input, Tracker tracker) {
+        System.out.println("=== Find by id ===");
+        String id = input.askStr("Enter item id: ");
+        Item item = tracker.findById(id);
+        if (item != null) {
+            System.out.println(item);
+        } else {
+            System.out.print("Item doesn't find.");
+        }
+    }
+
+    /**
+     * Поиск по имени заявки
+     *
+     * @param input
+     * @param tracker
+     */
+    public static void findByName(Input input, Tracker tracker) {
+        System.out.println("=== Find items by name ===");
+        String name = input.askStr("Enter item name: ");
+        Item[] result = tracker.findByName(name);
+        if (result.length != 0) {
+            for (Item names : result) {
+                System.out.println(names);
+            }
+        } else {
+            System.out.println("Item doesn't find.");
+        }
+    }
+
+    /**
+     * Взаимодействие пользователя с меню.
+     *
+     * @param input
+     * @param tracker
+     */
     public void init(Input input, Tracker tracker) {
         boolean run = true;
-        Item item;
-        Item[] items;
-        String name;
-        String id;
         while (run) {
             this.showMenu();
             int select = input.askInt("Select: ");
             switch (select) {
                 case 0:
-                    System.out.println("=== Create a new Item ====");
-                    name = input.askStr("Enter name: ");
-                    item = new Item(name);
-                    tracker.add(item);
+                    StartUI.createItem(input, tracker);
                     break;
                 case 1:
-                    System.out.println("=== All items ===");
-                    items = tracker.findAll();
-                    for (Item names :
-                            items) {
-                        System.out.println(names);
-                    }
+                    StartUI.showItems(tracker);
                     break;
                 case 2:
-                    System.out.println("=== Edit ===");
-                    id = input.askStr("Enter item id: ");
-                    name = input.askStr("Enter new item name: ");
-                    if (tracker.replace(id, new Item(name))) {
-                        System.out.println("Edit successful!");
-                    } else {
-                        System.out.println("Item doesn't find.");
-                    }
+                    StartUI.editItem(input, tracker);
                     break;
                 case 3:
-                    System.out.println("=== Delete ===");
-                    id = input.askStr("Enter item id: ");
-                    if (tracker.delete(id)) {
-                        System.out.println("Delete successful!");
-                    } else {
-                        System.out.println("Item doesn't find.");
-                    }
+                    StartUI.deleteItem(input, tracker);
                     break;
                 case 4:
-                    System.out.println("=== Find by id ===");
-                    id = input.askStr("Enter item id: ");
-                    item = tracker.findById(id);
-                    if (item != null) {
-                        System.out.println(item);
-                    } else {
-                        System.out.print("Item doesn't find.");
-                    }
+                    StartUI.findById(input, tracker);
                     break;
                 case 5:
-                    System.out.println("=== Find items by name ===");
-                    name = input.askStr("Enter item name: ");
-                    Item[] result = tracker.findByName(name);
-                    if (result.length != 0) {
-                        for (Item names : result) {
-                            System.out.println(names);
-                        }
-                    } else {
-                        System.out.println("Item doesn't find.");
-                    }
+                    StartUI.findByName(input, tracker);
                     break;
                 case 6:
                     run = false;
@@ -76,6 +136,9 @@ public class StartUI {
 
     }
 
+    /**
+     * Метод выводит меню
+     */
     private void showMenu() {
         System.out.println("Menu.");
         System.out.println("0. Add new item");
