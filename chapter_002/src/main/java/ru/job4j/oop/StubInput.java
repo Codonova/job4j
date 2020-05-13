@@ -1,6 +1,6 @@
 package ru.job4j.oop;
 
-import ru.job4j.oop.tracker.Input;
+import ru.job4j.tracker.Input;
 
 public class StubInput implements Input {
     private String[] answers;
