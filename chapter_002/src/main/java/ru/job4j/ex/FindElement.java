@@ -7,6 +7,7 @@ public class FindElement {
         for (String name : value) {
             if (key.equals(name)) {
                 rsl = i;
+                break;
             }
             i++;
         }
