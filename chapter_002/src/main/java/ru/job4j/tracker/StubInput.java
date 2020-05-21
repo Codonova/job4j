@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import ru.job4j.tracker.Input;
-
 public class StubInput implements Input {
     private String[] answers;
     private int position = 0;
@@ -9,6 +7,7 @@ public class StubInput implements Input {
     public StubInput(String[] answers) {
         this.answers = answers;
     }
+
     @Override
     public String askStr(String question) {
         return answers[position++];
@@ -22,10 +21,9 @@ public class StubInput implements Input {
     @Override
     public int askInt(String question, int max) {
         int select = askInt(question);
-        if (select >= 0 && select < max) {
-            return select;
-        } else {
+        if (select < 0 && select >= max) {
             throw new IllegalStateException(String.format("Out of about %s > [0, %s]", select, max));
         }
+        return select;
     }
 }
