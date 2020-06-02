@@ -1,18 +1,18 @@
 package ru.job4j.tracker;
 
+import com.sun.jdi.Value;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Tracker {
     /**
      * Массив для хранения заявок.
      */
-    private final Item[] items = new Item[100];
-
-    /**
-     * Указатель ячейки для новой заявки.
-     */
-    private int position = 0;
+    private final List<Item> items = new ArrayList<Item>();
 
     /**
      * Метод возвращает копию массива без пустых значений.
@@ -20,8 +20,8 @@ public class Tracker {
      * @return массив без пустых ячеек
      */
 
-    public Item[] findAll() {
-        return Arrays.copyOf(items, position);
+    public List<Item> findAll() {
+        return this.items;
     }
 
     /**
@@ -31,16 +31,15 @@ public class Tracker {
      * @return Массив имен
      */
 
-    public Item[] findByName(String key) {
-        Item[] names = new Item[position];
-        int size = 0;
-        for (int i = 0; i < names.length; i++) {
-            if (items[i].getName().equals(key)) {
-                names[size] = items[i];
-                size++;
+    public List<Item> findByName(String key) {
+       // Item[] names = new Item[position];
+        ArrayList<Item> names = new ArrayList<>();
+        for (Item name : this.items) {
+            if (name.getName().equals(key)) {
+                names.add(name);
             }
         }
-        return Arrays.copyOf(names, size);
+        return names;
     }
 
     /**
@@ -51,7 +50,7 @@ public class Tracker {
      */
     public Item findById(String id) {
         int index = indexOf(id);
-        return index != -1 ? items[index] : null;
+        return index != -1 ? items.get(index) : null;
     }
 
     /**
@@ -61,9 +60,10 @@ public class Tracker {
      */
     public Item add(Item item) {
         item.setId(generateId());
-        items[position++] = item;
+        this.items.add(item);
         return item;
     }
+
 
     /**
      * Метод изменяет имя завяки.
@@ -76,7 +76,7 @@ public class Tracker {
         int index = indexOf(id);
         if (index != -1) {
             item.setId(id);
-            items[index] = item;
+            items.set(index, item);
             return true;
         }
         return false;
@@ -85,14 +85,17 @@ public class Tracker {
 
     private int indexOf(String id) {
         int rsl = -1;
-        for (int i = 0; i < position; i++) {
-            if (items[i].getId().equals(id)) {
-                rsl = i;
+        int index = 0;
+        for (Item item : this.items) {
+            if (item.getId().equals(id)) {
+                rsl = index;
                 break;
             }
+            index++;
         }
         return rsl;
     }
+
 
     /**
      * Метод удаляет заявку.
@@ -103,9 +106,7 @@ public class Tracker {
     public boolean delete(String id) {
         int index = indexOf(id);
         if (index != -1) {
-            System.arraycopy(items, index + 1, items, index, position - index);
-            items[position - 1] = null;
-            position--;
+           this.items.remove(index);
             return true;
         }
         return false;
