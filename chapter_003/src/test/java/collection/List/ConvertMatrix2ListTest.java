@@ -1,5 +1,4 @@
-package collection;
-
+package collection.List;
 
 import org.junit.Test;
 
@@ -16,7 +15,7 @@ public class ConvertMatrix2ListTest {
         ConvertMatrix2List list = new ConvertMatrix2List();
         int[][] input = {{1, 2}, {3, 4}};
         List<Integer> expect = Arrays.asList(1, 2, 3, 4);
-        List<Integer> rsl = list.toList(input);
+        List<Integer> rsl = ConvertMatrix2List.toList(input);
         assertThat(rsl, is(expect));
     }
 

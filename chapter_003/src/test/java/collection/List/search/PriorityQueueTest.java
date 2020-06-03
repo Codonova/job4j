@@ -1,12 +1,8 @@
-package collection.search;
+package collection.List.search;
 
-import collection.PriorityQueue;
-import collection.Task;
+import collection.List.PriorityQueue;
+import collection.List.Task;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
