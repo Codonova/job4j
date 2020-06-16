@@ -23,6 +23,6 @@ public class SortByNameItemTest {
                 new Item("B"),
                 new Item("C")
         );
-        assertThat(String.valueOf(items), is(String.valueOf(expect)));
+        assertThat(items, is(expect));
     }
 }

@@ -23,6 +23,6 @@ public class ReverseSortByNameItemTest {
                 new Item("B"),
                 new Item("A")
         );
-        assertThat(String.valueOf(items), is(String.valueOf(expect)));
+        assertThat(items, is(expect));
     }
 }
