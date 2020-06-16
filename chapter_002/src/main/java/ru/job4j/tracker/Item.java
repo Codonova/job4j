@@ -28,5 +28,4 @@ public class Item {
     public String toString() {
         return ("name: " + name + ", id: " + id);
     }
-
 }
