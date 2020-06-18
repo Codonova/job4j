@@ -20,13 +20,13 @@ public class JobTest {
     }
 
     @Test
-    public void whenAscComparatorByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new JobAscByName().thenComparing(new JobAscByPriority());
+    public void whenAscComparatorByPriorityAndName() {
+        Comparator<Job> cmpNamePriority = new JobAscByPriority().thenComparing(new JobAscByName());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
         );
-        assertThat(rsl, greaterThan(0));
+        assertThat(rsl, lessThan(0));
     }
 
     @Test
