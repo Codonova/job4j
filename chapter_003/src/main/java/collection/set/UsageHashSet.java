@@ -1,4 +1,4 @@
-package collection.Set;
+package collection.set;
 
 import java.util.HashSet;
 
@@ -9,7 +9,7 @@ public class UsageHashSet {
         autos.add("BMW");
         autos.add("Volvo");
         autos.add("Toyota");
-        for(String brand : autos) {
+        for (String brand : autos) {
             System.out.println(brand);
         }
     }

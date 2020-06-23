@@ -1,4 +1,4 @@
-package collection.Set;
+package collection.set;
 
 import java.util.HashSet;
 
@@ -19,7 +19,7 @@ public class UniqueText {
             check.add(o);
         }
         for (String t : text) {
-            if (check.contains(t) == false) {
+            if (!check.contains(t)) {
                 rsl = false;
                 break;
             }

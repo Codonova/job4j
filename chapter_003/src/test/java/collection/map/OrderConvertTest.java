@@ -1,4 +1,4 @@
-package collection.Map;
+package collection.map;
 
 import org.junit.Test;
 

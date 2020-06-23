@@ -1,4 +1,4 @@
-package collection.Set;
+package collection.set;
 
 public class Task {
     private String number;

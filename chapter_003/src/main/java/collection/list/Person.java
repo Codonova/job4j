@@ -1,4 +1,4 @@
-package collection.List;
+package collection.list;
 
 import java.util.ArrayList;
 
@@ -11,7 +11,7 @@ public class Person extends ArrayList<Person> {
     public Person(String name, String surname, String phone, String address) {
         this.name = name;
         this.surname = surname;
-        this. phone = phone;
+        this.phone = phone;
         this.address = address;
     }
 

@@ -1,4 +1,4 @@
-package collection.Set;
+package collection.set;
 
 import org.junit.Test;
 

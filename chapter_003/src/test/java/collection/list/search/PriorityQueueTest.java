@@ -1,7 +1,7 @@
-package collection.List.search;
+package collection.list.search;
 
-import collection.List.PriorityQueue;
-import collection.List.Task;
+import collection.list.PriorityQueue;
+import collection.list.Task;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

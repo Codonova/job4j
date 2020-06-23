@@ -1,4 +1,4 @@
-package collection.List;
+package collection.list;
 
 public class Task {
     private String desc;

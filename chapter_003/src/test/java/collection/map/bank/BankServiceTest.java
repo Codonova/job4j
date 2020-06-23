@@ -1,4 +1,4 @@
-package collection.Map.bank;
+package collection.map.bank;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package collection.Sort;
+package collection.sort;
 
 public class Job implements Comparable<Job> {
     private String name;
