@@ -11,14 +11,14 @@ public class SchoolTest {
     @Test
     public void whenClassA() {
         List<Student> input = List.of(
-                new Student("Kolobkov", 79),
+                new Student("Kolobkov", 70),
                 new Student("Ivanov", 63),
                 new Student("Abramov", 82),
                 new Student("Kurbatov", 33)
         );
-        List<Student> rsl = School.collect(input, s -> s.getScore() > 70 && s.getScore() < 100);
+        List<Student> rsl = School.collect(input, s -> s.getScore() >= 70 && s.getScore() <= 100);
         List<Student> expect = List.of(
-                new Student("Kolobkov", 79),
+                new Student("Kolobkov", 70),
                 new Student("Abramov", 82)
         );
         assertThat(rsl, is(expect));
@@ -28,13 +28,13 @@ public class SchoolTest {
     public void whenClassB() {
         List<Student> input = List.of(
                 new Student("Kolobkov", 79),
-                new Student("Ivanov", 63),
+                new Student("Ivanov", 50),
                 new Student("Abramov", 82),
                 new Student("Kurbatov", 33)
         );
-        List<Student> rsl = School.collect(input, s -> s.getScore() > 50 && s.getScore() < 70);
+        List<Student> rsl = School.collect(input, s -> s.getScore() >= 50 && s.getScore() < 70);
         List<Student> expect = List.of(
-                new Student("Ivanov", 63)
+                new Student("Ivanov", 50)
         );
         assertThat(expect, is(rsl));
     }
