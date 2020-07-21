@@ -10,6 +10,11 @@ public class Profiles {
     }
 
     public static List<Address> uniqueCollect(List<Profile> profiles) {
-        return collect(profiles).stream().sorted(Comparator.comparing(o -> o.getCity())).distinct().collect(Collectors.toList());
+        return profiles
+                .stream()
+                .map(p -> p.getAddress())
+                .sorted(Comparator.comparing(o -> o.getCity()))
+                .distinct()
+                .collect(Collectors.toList());
     }
 }
