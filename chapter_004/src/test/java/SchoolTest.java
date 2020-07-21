@@ -59,11 +59,12 @@ public class SchoolTest {
     public void ConvertListToMap() {
         List<Student> input = List.of(
                 new Student("Kolobkov", 79),
+                new Student("Kolobkov", 55),
                 new Student("Ivanov", 63),
                 new Student("Abramov", 82),
                 new Student("Kurbatov", 33)
         );
         Map<String, Student> rsl = School.collectToMap(input);
-        assertThat(rsl.get("Kolobkov"), is(new Student("Kolobkov", 79)));
+        assertThat(rsl.get("Kolobkov"), is(new Student("Kolobkov", 55)));
     }
 }
