@@ -29,7 +29,6 @@ public class JobTest {
         assertThat(rsl, greaterThan(0));
     }
 
-
     @Test
     public void whenDescComparatorByName() {
         Comparator<Job> cmpName = new JobDescByName();

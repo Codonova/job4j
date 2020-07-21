@@ -1,5 +1,6 @@
 package streamAPI;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Address {
@@ -43,5 +44,4 @@ public class Address {
     public int hashCode() {
         return Objects.hash(city, street, home, apartment);
     }
-
 }
