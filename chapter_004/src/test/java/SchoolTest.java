@@ -3,6 +3,7 @@ import streamAPI.School;
 import streamAPI.Student;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -52,5 +53,17 @@ public class SchoolTest {
                 new Student("Kurbatov", 33)
         );
         assertThat(expect, is(rsl));
+    }
+
+    @Test
+    public void ConvertListToMap() {
+        List<Student> input = List.of(
+                new Student("Kolobkov", 79),
+                new Student("Ivanov", 63),
+                new Student("Abramov", 82),
+                new Student("Kurbatov", 33)
+        );
+        Map<String, Student> rsl = School.collectToMap(input);
+        assertThat(rsl.get("Kolobkov"), is(new Student("Kolobkov", 79)));
     }
 }
