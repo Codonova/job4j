@@ -1,5 +1,6 @@
+package streamAPI;
+
 import org.junit.Test;
-import streamAPI.MatrixToList;
 
 import java.util.List;
 

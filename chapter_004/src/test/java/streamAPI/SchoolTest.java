@@ -1,6 +1,6 @@
+package streamAPI;
+
 import org.junit.Test;
-import streamAPI.School;
-import streamAPI.Student;
 
 import java.util.List;
 import java.util.Map;

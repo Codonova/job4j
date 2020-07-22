@@ -1,4 +1,5 @@
-import labmda.CountingFunction;
+package labmda;
+
 import org.junit.Test;
 
 import java.util.Arrays;

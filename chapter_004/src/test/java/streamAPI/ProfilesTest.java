@@ -1,7 +1,6 @@
+package streamAPI;
+
 import org.junit.Test;
-import streamAPI.Address;
-import streamAPI.Profile;
-import streamAPI.Profiles;
 
 import java.util.List;
 
