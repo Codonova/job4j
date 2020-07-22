@@ -10,6 +10,7 @@ public class BankService {
 
     /**
      * Метод добавляет пользователя в хранилище
+     *
      * @param user
      */
 
@@ -19,6 +20,7 @@ public class BankService {
 
     /**
      * Метод добавляет аккаунт
+     *
      * @param passport
      * @param account
      */
@@ -35,30 +37,39 @@ public class BankService {
 
     /**
      * Метод осуществляет поиск пользователя по паспорту
+     *
      * @param passport
      * @return пользователь
      */
 
     public User findByPassport(String passport) {
-        User user = null;
+      /*  User user = null;
         for (User key : users.keySet()) {
             if (key.getPassport().equals(passport)) {
                 user = key;
                 break;
             }
         }
-        return user;
+        // return user;
+
+       */
+        return users.keySet()
+                .stream()
+                .filter(e -> e.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
      * Метод осуществляет поиск счета пользователя, по реквизитам
+     *
      * @param passport
      * @param requisite
      * @return счет пользователя
      */
 
     public Account findByRequisite(String passport, String requisite) {
-        Account account = null;
+    /*  Account account = null;
         User user = findByPassport(passport);
         if (user != null) {
             List<Account> values = users.get(user);
@@ -67,12 +78,21 @@ public class BankService {
                 account = values.get(index);
             }
         }
-
-        return account;
+     */
+        if (findByPassport(passport) != null) {
+            return users.getOrDefault(findByPassport(passport), null)
+                    .stream()
+                    .filter(e -> e.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
+        }
+        // return account;
+        return null;
     }
 
     /**
      * Метод осуществляет перевод денег со счета на счет
+     *
      * @param srcPassport
      * @param srcRequisite
      * @param destPassport

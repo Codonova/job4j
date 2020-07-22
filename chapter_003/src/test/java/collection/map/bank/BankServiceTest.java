@@ -16,6 +16,15 @@ public class BankServiceTest {
     }
 
     @Test
+    public void whenFindUser() {
+        User user = new User("3434", "Ruslan");
+        BankService bank = new BankService();
+        bank.addUser(user);
+        User rsl = bank.findByPassport(user.getPassport());
+        assertThat(rsl, is(new User("3434", "Ruslan")));
+    }
+
+    @Test
     public void whenEnterInvalidPassport() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
