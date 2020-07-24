@@ -36,11 +36,11 @@ public class User {
             return false;
         }
         User user = (User) o;
-        return Objects.equals(passport, user.passport);
+        return passport.equals(user.getPassport()) && username.equals(user.getUsername());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(passport);
+        return Objects.hash(passport, username);
     }
 }
