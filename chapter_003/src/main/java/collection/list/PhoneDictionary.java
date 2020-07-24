@@ -11,7 +11,7 @@ public class PhoneDictionary {
     }
 
     public ArrayList<Person> find(String key) {
-        ArrayList<Person> rsl = new ArrayList<>();
+        var rsl = new ArrayList<Person>();
         Predicate<Person> findByName = (name) -> name.getName().equals(key);
         Predicate<Person> findBySurname = (surname) -> surname.getSurname().equals(key);
         Predicate<Person> findByPhone = (phone) -> phone.getPhone().equals(key);
@@ -25,7 +25,7 @@ public class PhoneDictionary {
         }
         */
 
-        for (Person person : this.persons) {
+        for (var person : this.persons) {
             if (combine.test(person)) {
                 rsl.add(person);
             }
