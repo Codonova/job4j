@@ -81,7 +81,7 @@ public class BankService {
         */
         User user = findByPassport(passport);
         if (user != null) {
-            return users.getOrDefault(user, null)
+            return users.getOrDefault(user, new ArrayList<>())
                     .stream()
                     .filter(e -> e.getRequisite().equals(requisite))
                     .findFirst()
