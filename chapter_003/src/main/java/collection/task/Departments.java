@@ -1,4 +1,4 @@
-package collection.finalTask;
+package collection.task;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package labmda.finalTask;
+package labmda.task;
 
 import java.util.Objects;
 
@@ -22,11 +22,14 @@ public class Tuple {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Tuple tuple = (Tuple) o;
-        return Double.compare(tuple.score, score) == 0 &&
-                Objects.equals(name, tuple.name);
+        return Double.compare(tuple.score, score) == 0 && Objects.equals(name, tuple.name);
     }
 
     @Override

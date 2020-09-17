@@ -1,4 +1,4 @@
-package streamAPI;
+package stream;
 
 public class Profile {
     private Address address;

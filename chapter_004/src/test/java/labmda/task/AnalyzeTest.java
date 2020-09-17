@@ -1,4 +1,4 @@
-package labmda.finalTask;
+package labmda.task;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package labmda.finalTask;
+package labmda.task;
 
 import java.util.Comparator;
 import java.util.List;

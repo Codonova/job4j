@@ -1,4 +1,4 @@
-package streamAPI;
+package stream;
 
 import org.junit.Test;
 

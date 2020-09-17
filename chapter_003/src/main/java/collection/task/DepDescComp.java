@@ -1,6 +1,5 @@
-package collection.finalTask;
+package collection.task;
 
-import java.util.Collection;
 import java.util.Comparator;
 
 public class DepDescComp implements Comparator<String> {

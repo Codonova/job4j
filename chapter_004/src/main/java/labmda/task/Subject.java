@@ -1,4 +1,4 @@
-package labmda.finalTask;
+package labmda.task;
 
 /**
  * Хранит в себе название и балл учебного предмета.

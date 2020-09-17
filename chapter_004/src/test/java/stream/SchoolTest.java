@@ -1,4 +1,4 @@
-package streamAPI;
+package stream;
 
 import org.junit.Test;
 
@@ -56,7 +56,7 @@ public class SchoolTest {
     }
 
     @Test
-    public void ConvertListToMap() {
+    public void convertListToMap() {
         List<Student> input = List.of(
                 new Student("Kolobkov", 79),
                 new Student("Kolobkov", 55),
