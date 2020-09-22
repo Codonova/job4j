@@ -10,7 +10,7 @@ public class Wget {
                             Thread.sleep(500);
                         }
                     } catch (InterruptedException ie) {
-                        ie.printStackTrace();
+                        Thread.currentThread().interrupt();
                     }
                 }
         );

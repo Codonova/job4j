@@ -8,13 +8,13 @@ public class ConsoleProgress implements Runnable {
         try {
             while (!Thread.currentThread().isInterrupted()) {
                 System.out.print("\r load: " + process(i++));
-                Thread.sleep(500);
+               Thread.sleep(500);
                 if (i == 3) {
                     i = 0;
                 }
             }
         } catch (InterruptedException ie) {
-            ie.printStackTrace();
+            Thread.currentThread().interrupt();
         }
     }
 
@@ -30,9 +30,11 @@ public class ConsoleProgress implements Runnable {
 
 
     public static void main(String[] args) throws InterruptedException {
-           Thread progress = new Thread(new ConsoleProgress());
-           progress.start();
-           Thread.sleep(3000);
-           progress.interrupt();
+        Thread progress = new Thread(new ConsoleProgress());
+        progress.start();
+        Thread.sleep(3000);
+        progress.interrupt();
+
+
     }
 }
