@@ -8,7 +8,7 @@ public class ConsoleProgress implements Runnable {
         try {
             while (!Thread.currentThread().isInterrupted()) {
                 System.out.print("\r load: " + process(i++));
-               Thread.sleep(500);
+                Thread.sleep(500);
                 if (i == 3) {
                     i = 0;
                 }
@@ -19,12 +19,7 @@ public class ConsoleProgress implements Runnable {
     }
 
     public static char process(int i) {
-        char c = '\\';
-        if (i == 1) {
-            c = '|';
-        } else if (i == 2) {
-            c = '/';
-        }
+        char c = ((i == 0) ? '\\' : (i == 1) ? '|' : '/');
         return c;
     }
 
