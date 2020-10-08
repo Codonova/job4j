@@ -4,25 +4,18 @@ package multithreading;
 public class ConsoleProgress implements Runnable {
     @Override
     public void run() {
-        int i = 0;
+        char[] chars = {'\\', '|', '/'};
         try {
             while (!Thread.currentThread().isInterrupted()) {
-                System.out.print("\r load: " + process(i++));
-                Thread.sleep(500);
-                if (i == 3) {
-                    i = 0;
+                for (char c : chars) {
+                    System.out.print("\r load: " + c);
+                    Thread.sleep(500);
                 }
             }
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
         }
     }
-
-    public static char process(int i) {
-        char c = ((i == 0) ? '\\' : (i == 1) ? '|' : '/');
-        return c;
-    }
-
 
     public static void main(String[] args) throws InterruptedException {
         Thread progress = new Thread(new ConsoleProgress());
