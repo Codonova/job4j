@@ -1,4 +1,4 @@
-package multithreading;
+package ru.job4j.mutithreading;
 
 public final class Cache {
     private static Cache cache;

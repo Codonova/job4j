@@ -1,4 +1,4 @@
-package multithreading;
+package ru.job4j.mutithreading;
 
 public class ThreadState {
     public static void main(String[] args) {
